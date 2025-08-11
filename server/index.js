@@ -15,6 +15,9 @@ const startServer = () => {
     app.listen(PORT, () => console.log(`Server speaking on ${PORT}`));
 };
 
+const entryRoutes = require('./routes/entryRoutes'); 
+app.use('/api/entries', entryRoutes);
+
 console.log("MONGO_URI from env:", process.env.MONGO_URI);
 if (process.env.MONGO_URI) {
     mongoose.connect(process.env.MONGO_URI)
