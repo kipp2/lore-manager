@@ -18,6 +18,9 @@ const startServer = () => {
 const entryRoutes = require('./routes/entryRoutes'); 
 app.use('/api/entries', entryRoutes);
 
+const loreAIRoutes = require('./routes/loreAIRoutes');
+app.use('/api/lore', loreAIRoutes)
+
 console.log("MONGO_URI from env:", process.env.MONGO_URI);
 if (process.env.MONGO_URI) {
     mongoose.connect(process.env.MONGO_URI)
