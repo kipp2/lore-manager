@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 5000;
 app.get('/', (req, res) => res.send('API running successfully'));
 
 const startServer = () => {
-    app.listen(PORT, () => console.log(`Server speaking on ${PORT}`));
+    app.listen(PORT, "0.0.0.0", () =>{
+         console.log(`Server speaking on ${PORT}`);
+    });
 };
 
 const entryRoutes = require('./routes/entryRoutes'); 
